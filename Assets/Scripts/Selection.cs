@@ -27,6 +27,16 @@ public class Selection {
 		recalculateSize();
 	}
 
+	public Vector2 getEnd() {
+
+		return end;
+	}
+
+	public Vector2 getStart() {
+
+		return start;
+	}
+
 	private void recalculateSize() {
 
 		width = (int) Mathf.Abs(start.x - end.x) + 1;

@@ -28,18 +28,29 @@
 	"buffers":
 	[
 		{
+			"contents": "using UnityEngine;\nusing System.Collections;\n\npublic class GridScript : MonoBehaviour {\n\n	public GameObject selector;\n	private GameObject cursor;\n	\n	private GameObject[] selectors;\n\n	private bool selecting = false;\n\n	private Vector2 selectionStart;\n	private Vector2 currentField;\n\n	// Use this for initialization\n	void Start () {\n		cursor = (GameObject) GameObject.Instantiate(selector);\n	}\n	\n	// Update is called once per frame\n	void FixedUpdate () {\n		\n		currentField = FieldScript.GetFieldAtWorldCoords(Camera.main.ScreenToWorldPoint(Input.mousePosition));\n		Vector2 fieldCoords = FieldScript.GetWorldCoordsAtFieldPos(currentField);\n		\n		cursor.GetComponent<Transform>().position = fieldCoords;\n\n		if(Input.GetMouseButton(0)) {\n			if(!selecting) {\n				selectionStart = currentField;\n			}\n			\n			selecting = true;\n			\n		} else {\n			\n			if(selecting) {\n				endSelecting();\n			}\n		}\n		\n		if(selecting) {\n			int selectionWidth = (int) Mathf.Floor(Mathf.Abs(selectionStart.x - currentField.x) + 1);\n			int selectionHeight = (int) Mathf.Floor(Mathf.Abs(selectionStart.y - currentField.y) + 1);\n			\n\n			cursor.GetComponent<SelectorScript>().setModeCorner(selectionWidth == selectionHeight);\n\n			\n			cursor.transform.localScale = new Vector2(selectionWidth, selectionHeight);\n			\n			\n			Vector2 startCoords = FieldScript.GetWorldCoordsAtFieldPos(selectionStart);\n			Vector2 endCoords = fieldCoords;\n			cursor.transform.position = new Vector2((startCoords.x + endCoords.x) / 2, (startCoords.y + endCoords.y) / 2);\n		}\n	}\n	\n\n	\n	private void endSelecting() {\n		selecting = false;\n		cursor.transform.localScale = new Vector2(1, 1);\n		\n		Selection test = new Selection(selectionStart, currentField);\n\n		Vector2[] fields = test.getVectorsInside();\n\n\n\n		foreach (Vector2 v in fields) {\n			GameObject field = GameObject.Find(\"World\").GetComponent<FieldCreator>().placeField(v);\n\n			if(field != null) {\n				field.GetComponent<FieldScript>().createDirt();\n			}\n		}\n	}\n}\n",
 			"file": "Assets/Scripts/GridScript.cs",
+			"file_size": 2040,
+			"file_write_time": 130499808109241923,
 			"settings":
 			{
-				"buffer_size": 1957,
+				"buffer_size": 1955,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/MenuScript.cs",
+			"settings":
+			{
+				"buffer_size": 559,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Assets/Scripts/Selection.cs",
+			"file": "Assets/Scripts/UtilityScript.cs",
 			"settings":
 			{
-				"buffer_size": 1245,
+				"buffer_size": 362,
 				"line_ending": "Unix"
 			}
 		}
@@ -47,15 +58,19 @@
 	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 58.0,
 		"selected_items":
 		[
 			[
-				"insta",
-				"Package Control: Install Package"
+				"remo",
+				"Package Control: Remove Package"
 			],
 			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -67,7 +82,7 @@
 				"Package Control: List Packages"
 			]
 		],
-		"width": 600.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -84,6 +99,12 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CameraFollowScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/DirtScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldCreator.cs",
+		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Unity3D Build System/README.md"
@@ -94,7 +115,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -110,7 +131,7 @@
 			"7"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -133,20 +154,77 @@
 					"file": "Assets/Scripts/GridScript.cs",
 					"settings":
 					{
-						"buffer_size": 1957,
+						"buffer_size": 1955,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								215,
-								215
+								1737,
+								1737
 							]
 						],
 						"settings":
 						{
+							"codeintel": true,
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/MenuScript.cs",
+					"settings":
+					{
+						"buffer_size": 559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/UtilityScript.cs",
+					"settings":
+					{
+						"buffer_size": 362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -158,36 +236,8 @@
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 1,
-					"file": "Assets/Scripts/Selection.cs",
-					"settings":
-					{
-						"buffer_size": 1245,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								725,
-								725
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 3.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -219,7 +269,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.598786828423,
 			1.0
 		],
 		"rows":
