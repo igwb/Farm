@@ -4,12 +4,40 @@
 		"selected_items":
 		[
 			[
-				"get",
-				"getHeight"
+				"Mo",
+				"MonoBehaviour"
 			],
 			[
 				"re",
-				"result"
+				"return"
+			],
+			[
+				"Arg",
+				"ArgumentException	class"
+			],
+			[
+				"set",
+				"setEnd"
+			],
+			[
+				"getS",
+				"getStart"
+			],
+			[
+				"cur",
+				"currentField"
+			],
+			[
+				"cu",
+				"currentField"
+			],
+			[
+				"FIELD",
+				"FieldScript"
+			],
+			[
+				"get",
+				"getHeight"
 			],
 			[
 				"y",
@@ -28,13 +56,10 @@
 	"buffers":
 	[
 		{
-			"contents": "using UnityEngine;\nusing System.Collections;\n\npublic class GridScript : MonoBehaviour {\n\n	public GameObject selector;\n	private GameObject cursor;\n	\n	private GameObject[] selectors;\n\n	private bool selecting = false;\n\n	private Vector2 selectionStart;\n	private Vector2 currentField;\n\n	// Use this for initialization\n	void Start () {\n		cursor = (GameObject) GameObject.Instantiate(selector);\n	}\n	\n	// Update is called once per frame\n	void FixedUpdate () {\n		\n		currentField = FieldScript.GetFieldAtWorldCoords(Camera.main.ScreenToWorldPoint(Input.mousePosition));\n		Vector2 fieldCoords = FieldScript.GetWorldCoordsAtFieldPos(currentField);\n		\n		cursor.GetComponent<Transform>().position = fieldCoords;\n\n		if(Input.GetMouseButton(0)) {\n			if(!selecting) {\n				selectionStart = currentField;\n			}\n			\n			selecting = true;\n			\n		} else {\n			\n			if(selecting) {\n				endSelecting();\n			}\n		}\n		\n		if(selecting) {\n			int selectionWidth = (int) Mathf.Floor(Mathf.Abs(selectionStart.x - currentField.x) + 1);\n			int selectionHeight = (int) Mathf.Floor(Mathf.Abs(selectionStart.y - currentField.y) + 1);\n			\n\n			cursor.GetComponent<SelectorScript>().setModeCorner(selectionWidth == selectionHeight);\n\n			\n			cursor.transform.localScale = new Vector2(selectionWidth, selectionHeight);\n			\n			\n			Vector2 startCoords = FieldScript.GetWorldCoordsAtFieldPos(selectionStart);\n			Vector2 endCoords = fieldCoords;\n			cursor.transform.position = new Vector2((startCoords.x + endCoords.x) / 2, (startCoords.y + endCoords.y) / 2);\n		}\n	}\n	\n\n	\n	private void endSelecting() {\n		selecting = false;\n		cursor.transform.localScale = new Vector2(1, 1);\n		\n		Selection test = new Selection(selectionStart, currentField);\n\n		Vector2[] fields = test.getVectorsInside();\n\n\n\n		foreach (Vector2 v in fields) {\n			GameObject field = GameObject.Find(\"World\").GetComponent<FieldCreator>().placeField(v);\n\n			if(field != null) {\n				field.GetComponent<FieldScript>().createDirt();\n			}\n		}\n	}\n}\n",
 			"file": "Assets/Scripts/GridScript.cs",
-			"file_size": 2040,
-			"file_write_time": 130499808109241923,
 			"settings":
 			{
-				"buffer_size": 1955,
+				"buffer_size": 1730,
 				"line_ending": "Windows"
 			}
 		},
@@ -53,6 +78,30 @@
 				"buffer_size": 362,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "Assets/Scripts/Selection.cs",
+			"settings":
+			{
+				"buffer_size": 1341,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/PlotScript.cs",
+			"settings":
+			{
+				"buffer_size": 1599,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Range.cs",
+			"settings":
+			{
+				"buffer_size": 567,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
@@ -62,19 +111,23 @@
 		"selected_items":
 		[
 			[
-				"remo",
-				"Package Control: Remove Package"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"insta",
+				"inst",
 				"Package Control: Install Package"
 			],
 			[
 				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -99,9 +152,13 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CameraFollowScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/RangeEditor.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlantScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/DirtScript.cs",
+		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/All Autocomplete/README.md",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CameraFollowScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldCreator.cs",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
@@ -115,7 +172,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -125,6 +182,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fieldCoords",
+			"selector",
+			"fields",
 			"yIncrementor",
 			"				",
 			"xIncrementor",
@@ -146,7 +206,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -154,15 +214,15 @@
 					"file": "Assets/Scripts/GridScript.cs",
 					"settings":
 					{
-						"buffer_size": 1955,
+						"buffer_size": 1730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1737,
-								1737
+								343,
+								343
 							]
 						],
 						"settings":
@@ -172,7 +232,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -189,8 +249,8 @@
 						"selection":
 						[
 							[
-								245,
-								245
+								304,
+								304
 							]
 						],
 						"settings":
@@ -217,8 +277,8 @@
 						"selection":
 						[
 							[
-								242,
-								242
+								362,
+								362
 							]
 						],
 						"settings":
@@ -226,6 +286,86 @@
 							"codeintel": true,
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Scripts/Selection.cs",
+					"settings":
+					{
+						"buffer_size": 1341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								531,
+								531
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Assets/Scripts/PlotScript.cs",
+					"settings":
+					{
+						"buffer_size": 1599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								65,
+								65
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/Scripts/Range.cs",
+					"settings":
+					{
+						"buffer_size": 567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -269,7 +409,7 @@
 		"cols":
 		[
 			0.0,
-			0.598786828423,
+			0.945984979781,
 			1.0
 		],
 		"rows":

@@ -7,13 +7,15 @@ public class PlantScript : MonoBehaviour {
 	public Sprite[] sprites;
 	public float growthTime;
 	
-	public float maxGraphicsOffsetX;
-	public float maxGraphicsOffsetY;
+
+	public Range graphicsOffsetX;
+	public Range graphicsOffsetY;
 	
 	private float plantTime;
 
 	// Use this for initialization
 	void Start () {
+		
 		plantTime = Time.timeSinceLevelLoad;
 	}
 	
