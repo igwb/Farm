@@ -9,13 +9,16 @@ public class PlotScript : MonoBehaviour {
 	public Range growthDelayRange;
 
 	private float growthDelay;
-	private float emptySince = -1;
+	private ExtendedBool readySince;
+
+	public float water;
+	public float fertilizer;
 
 	// Use this for initialization
 	void Start () {
 
-		Debug.Log(growthDelayRange.min + "|" + growthDelayRange.max);
 		growthDelay = growthDelayRange.Random();
+		readySince = new ExtendedBool();
 	}
 	
 	public void Instantiate(Vector2 position) {
@@ -25,12 +28,11 @@ public class PlotScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(plant == null) {
-			if(emptySince == -1) {
-				emptySince = Time.timeSinceLevelLoad;
-			} else if(Time.timeSinceLevelLoad - emptySince >= growthDelay) {
-				Plant(defaultPlant);
-			}
+
+		readySince.state = (plant == null && water > 0);
+
+		if(readySince.state && Time.timeSinceLevelLoad - readySince.lastChange >= growthDelay) {
+			Plant(defaultPlant);
 		}
 	}
 	
@@ -45,7 +47,21 @@ public class PlotScript : MonoBehaviour {
 
 		plant.GetComponent<Transform>().position = new Vector3(plantPosition.x + plantScript.graphicsOffsetX.Random(), plantPosition.y + plantScript.graphicsOffsetY.Random(), plantPosition.z);
 		plant.GetComponent<SpriteRenderer>().sortingOrder = (int)(transform.position.y * -100f);
-		emptySince = -1;
+
 		growthDelay = growthDelayRange.Random();
+	}
+
+	public float useWater(float amount) {
+
+		if(water >= amount) {
+			water -= amount;
+			return 0;
+		} else {
+			float notAvailable = amount - water;
+			water = 0;
+			return notAvailable;
+		}
+
+
 	}
 }

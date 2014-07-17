@@ -29,7 +29,7 @@ public class FieldScript : MonoBehaviour {
 		
 		GameObject theDirt = (GameObject)GameObject.Instantiate(dirt);
 		theDirt.transform.parent = transform;
-		theDirt.name = "dirt";
+		theDirt.name = "Plot";
 		theDirt.GetComponent<PlotScript>().Instantiate(position);	
 		
 	}

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"plantPosition"
+			],
+			[
+				"plan",
+				"plantPosition"
+			],
+			[
+				"Ve",
+				"Vector3	x, y, z"
+			],
+			[
+				"V",
+				"Vector3	x, y, z"
+			],
+			[
+				"Ran",
+				"Random"
+			],
+			[
+				"gra",
+				"graphicsOffsetY"
+			],
+			[
+				"plant",
+				"plantScript"
+			],
+			[
+				"gr",
+				"graphicsOffsetY"
+			],
+			[
 				"Mo",
 				"MonoBehaviour"
 			],
@@ -56,22 +88,6 @@
 	"buffers":
 	[
 		{
-			"file": "Assets/Scripts/GridScript.cs",
-			"settings":
-			{
-				"buffer_size": 1730,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/MenuScript.cs",
-			"settings":
-			{
-				"buffer_size": 559,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "Assets/Scripts/UtilityScript.cs",
 			"settings":
 			{
@@ -80,26 +96,10 @@
 			}
 		},
 		{
-			"file": "Assets/Scripts/Selection.cs",
+			"file": "Assets/Scripts/MenuScript.cs",
 			"settings":
 			{
-				"buffer_size": 1341,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Assets/Scripts/PlotScript.cs",
-			"settings":
-			{
-				"buffer_size": 1599,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/Range.cs",
-			"settings":
-			{
-				"buffer_size": 567,
+				"buffer_size": 559,
 				"line_ending": "Unix"
 			}
 		}
@@ -152,11 +152,16 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/MenuScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/UtilityScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlotScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/RangeEditor.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlantScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Range.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/GridScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/DirtScript.cs",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/All Autocomplete/README.md",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CameraFollowScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldCreator.cs",
@@ -182,6 +187,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"currentGrowthDelay",
+			"growthDelay",
 			"fieldCoords",
 			"selector",
 			"fields",
@@ -206,29 +213,28 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Assets/Scripts/GridScript.cs",
+					"file": "Assets/Scripts/UtilityScript.cs",
 					"settings":
 					{
-						"buffer_size": 1730,
+						"buffer_size": 362,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								343,
-								343
+								359,
+								359
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -236,7 +242,13 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
 					"buffer": 1,
 					"file": "Assets/Scripts/MenuScript.cs",
@@ -249,123 +261,14 @@
 						"selection":
 						[
 							[
-								304,
-								304
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
 							"syntax": "Packages/C#/C#.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Assets/Scripts/UtilityScript.cs",
-					"settings":
-					{
-						"buffer_size": 362,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"syntax": "Packages/C#/C#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Assets/Scripts/Selection.cs",
-					"settings":
-					{
-						"buffer_size": 1341,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								531,
-								531
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Assets/Scripts/PlotScript.cs",
-					"settings":
-					{
-						"buffer_size": 1599,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								65,
-								65
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Assets/Scripts/Range.cs",
-					"settings":
-					{
-						"buffer_size": 567,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C#/C#.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -373,11 +276,6 @@
 					},
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -409,7 +307,7 @@
 		"cols":
 		[
 			0.0,
-			0.945984979781,
+			0.496533795494,
 			1.0
 		],
 		"rows":
