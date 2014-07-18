@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"pl",
+				"plant"
+			],
+			[
+				"re",
+				"readySince"
+			],
+			[
+				"g",
+				"growthDelay"
+			],
+			[
+				"st",
+				"state"
+			],
+			[
+				"E",
+				"ExtendedBool"
+			],
+			[
+				"state",
+				"state_"
+			],
+			[
+				"dry",
+				"drySince"
+			],
+			[
+				"gr",
+				"growthTime"
+			],
+			[
+				"grow",
+				"growthPercentage"
+			],
+			[
+				"time",
+				"timeSinceLevelLoad"
+			],
+			[
+				"T",
+				"Time"
+			],
+			[
+				"water",
+				"waterNeed"
+			],
+			[
+				"m",
+				"min"
+			],
+			[
+				"Plot",
+				"PlotScript"
+			],
+			[
 				"pos",
 				"plantPosition"
 			],
@@ -32,16 +88,8 @@
 				"plantScript"
 			],
 			[
-				"gr",
-				"graphicsOffsetY"
-			],
-			[
 				"Mo",
 				"MonoBehaviour"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"Arg",
@@ -88,18 +136,26 @@
 	"buffers":
 	[
 		{
-			"file": "Assets/Scripts/UtilityScript.cs",
+			"file": "Assets/Scripts/PlotScript.cs",
 			"settings":
 			{
-				"buffer_size": 362,
+				"buffer_size": 1671,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/PlantScript.cs",
+			"settings":
+			{
+				"buffer_size": 1259,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Assets/Scripts/MenuScript.cs",
+			"file": "Assets/Scripts/FieldScript.cs",
 			"settings":
 			{
-				"buffer_size": 559,
+				"buffer_size": 1166,
 				"line_ending": "Unix"
 			}
 		}
@@ -152,19 +208,22 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CustomClasses/ExtendendBool.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/ExtendedBoolEditor.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CustomClasses/Range.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/RangeEditor.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/GridScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldCreator.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/MenuScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/UtilityScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlotScript.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/RangeEditor.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlantScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Range.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/GridScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/DirtScript.cs",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/All Autocomplete/README.md",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CameraFollowScript.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldCreator.cs",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
@@ -187,6 +246,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"}\n",
+			"Debug",
+			"debug",
 			"currentGrowthDelay",
 			"growthDelay",
 			"fieldCoords",
@@ -218,18 +280,72 @@
 			[
 				{
 					"buffer": 0,
-					"file": "Assets/Scripts/UtilityScript.cs",
+					"file": "Assets/Scripts/PlotScript.cs",
 					"settings":
 					{
-						"buffer_size": 362,
+						"buffer_size": 1671,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								359,
-								359
+								1426,
+								1426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/PlantScript.cs",
+					"settings":
+					{
+						"buffer_size": 1259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/FieldScript.cs",
+					"settings":
+					{
+						"buffer_size": 1166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								377,
+								377
 							]
 						],
 						"settings":
@@ -246,36 +362,8 @@
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 1,
-					"file": "Assets/Scripts/MenuScript.cs",
-					"settings":
-					{
-						"buffer_size": 559,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C#/C#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -307,7 +395,7 @@
 		"cols":
 		[
 			0.0,
-			0.496533795494,
+			0.971114962449,
 			1.0
 		],
 		"rows":
