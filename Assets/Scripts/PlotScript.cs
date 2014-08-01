@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlotScript : MonoBehaviour {
 
+	public GameObject iconDone;
+	public GameObject iconWater;
+
 	public GameObject plant;
 	public GameObject defaultPlant;
 
@@ -34,6 +37,9 @@ public class PlotScript : MonoBehaviour {
 		if(readySince.state && Time.timeSinceLevelLoad - readySince.lastChange >= growthDelay) {
 			Plant(defaultPlant);
 		}
+
+		iconWater.SetActive(water <= 0);
+		iconDone.SetActive(plant != null && plant.GetComponent<PlantScript>().GetGrowthPercentage() >= 1.0f);
 	}
 	
 	private void Plant(GameObject plantThis) {
@@ -49,6 +55,8 @@ public class PlotScript : MonoBehaviour {
 		plant.GetComponent<SpriteRenderer>().sortingOrder = (int)(transform.position.y * -100f);
 
 		growthDelay = growthDelayRange.Random();
+
+
 	}
 
 	public float useWater(float amount) {

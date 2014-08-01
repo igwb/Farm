@@ -32,12 +32,12 @@ public class PlantScript : MonoBehaviour {
 	
 	void Update () {
 		
-		age(Time.deltaTime);
+		Age(Time.deltaTime);
 
 		GetComponent<SpriteRenderer>().sprite = sprites[(int)((sprites.Length - 1) * growthPercentage)];
 	}
 
-	private void age(float time) {
+	private void Age(float time) {
 		lifeLength += time;
 
 		drySince.state = (parent.useWater(waterNeedLiving * time) > 0);
@@ -53,5 +53,10 @@ public class PlantScript : MonoBehaviour {
 		if(drySince.state && Time.timeSinceLevelLoad - drySince.lastChange >= dryDieTime) {
 			GameObject.Destroy(gameObject);
 		}
+	}
+
+	public float GetGrowthPercentage() {
+
+		return growthPercentage;
 	}
 }

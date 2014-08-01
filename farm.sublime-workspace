@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"growthPercentage"
+			],
+			[
+				"pla",
+				"plantScript"
+			],
+			[
+				"Tran",
+				"Tranform"
+			],
+			[
+				"GetComp",
+				"GetComponentInChildren	type"
+			],
+			[
 				"pl",
 				"plant"
 			],
@@ -116,10 +132,6 @@
 				"FieldScript"
 			],
 			[
-				"get",
-				"getHeight"
-			],
-			[
 				"y",
 				"yIncrementor"
 			],
@@ -139,7 +151,7 @@
 			"file": "Assets/Scripts/PlotScript.cs",
 			"settings":
 			{
-				"buffer_size": 1671,
+				"buffer_size": 1873,
 				"line_ending": "Windows"
 			}
 		},
@@ -147,15 +159,7 @@
 			"file": "Assets/Scripts/PlantScript.cs",
 			"settings":
 			{
-				"buffer_size": 1259,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Assets/Scripts/FieldScript.cs",
-			"settings":
-			{
-				"buffer_size": 1166,
+				"buffer_size": 1329,
 				"line_ending": "Unix"
 			}
 		}
@@ -208,21 +212,23 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Bodo Beyer/Desktop/Fukkit/plugins/WeatherVote/config.yml",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/GridScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldScript.cs",
+		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlantScript.cs",
+		"/C/Users/Bodo Beyer/Desktop/Fukkit/plugins/WeatherVote/locale.properties",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CustomClasses/ExtendendBool.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/ExtendedBoolEditor.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CustomClasses/Range.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Editor/RangeEditor.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/GridScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldCreator.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Selection.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/MenuScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/UtilityScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlotScript.cs",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/PlantScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/Range.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/DirtScript.cs",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/All Autocomplete/README.md",
-		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/FieldScript.cs",
 		"/C/Users/Bodo Beyer/Documents/farm/Assets/Scripts/CameraFollowScript.cs",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Bodo Beyer/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
@@ -283,15 +289,15 @@
 					"file": "Assets/Scripts/PlotScript.cs",
 					"settings":
 					{
-						"buffer_size": 1671,
+						"buffer_size": 1873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1426,
-								1426
+								873,
+								873
 							]
 						],
 						"settings":
@@ -310,15 +316,15 @@
 					"file": "Assets/Scripts/PlantScript.cs",
 					"settings":
 					{
-						"buffer_size": 1259,
+						"buffer_size": 1329,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								230,
-								230
+								656,
+								656
 							]
 						],
 						"settings":
@@ -327,34 +333,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Assets/Scripts/FieldScript.cs",
-					"settings":
-					{
-						"buffer_size": 1166,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								377,
-								377
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C#/C#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
