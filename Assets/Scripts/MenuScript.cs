@@ -3,10 +3,13 @@ using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
+	public float activeY;
+	public float inactiveY;
+
 	public enum utilities {
 		mower,
 		wateringcan,
-		seeds,
+		seedbag,
 		spade
 	}
 
@@ -27,7 +30,12 @@ public class MenuScript : MonoBehaviour {
 		
 		activeUtility = util;
 		
-		GameObject.Find("BuildingGrid").GetComponent<SpriteRenderer>().enabled = (util == utilities.spade);
+		foreach(Transform t in GetComponentInChildren<Transform>()) {
+			t.position = new Vector2(t.position.x, inactiveY);
+		}
+
+		Transform active = transform.Find(util.ToString());
+		active.position = new Vector2(active.position.x, activeY);
 	}
 	
 	public utilities getActiveUtility() {

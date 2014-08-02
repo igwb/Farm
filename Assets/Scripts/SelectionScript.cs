@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GridScript : MonoBehaviour {
+public class SelectionScript : MonoBehaviour {
 
 	public GameObject selectorPrefab;
 	private GameObject cursor;
@@ -46,17 +46,11 @@ public class GridScript : MonoBehaviour {
 			cursor.transform.localScale = new Vector2(sel.getWidth(), sel.getHeight());
 			cursor.transform.position = new Vector2((startCoords.x + endCoords.x) / 2, (startCoords.y + endCoords.y) / 2);
 
-			cursor.GetComponent<SelectorScript>().setModeCorner(sel.isSquare());
+			cursor.GetComponent<SelectionRenderer>().setModeCorner(sel.isSquare());
 		}
 	}
 	
-
-	
-	private void endSelecting() {
-		
-		Vector2[] selectedFields = sel.getVectorsInside();
-
-
+	private void actionSpade(Vector2[] selectedFields) {
 		foreach (Vector2 v in selectedFields) {
 			GameObject field = GameObject.Find("World").GetComponent<FieldCreator>().placeField(v);
 
@@ -64,6 +58,35 @@ public class GridScript : MonoBehaviour {
 				field.GetComponent<FieldScript>().createDirt();
 			}
 		}
+	}
+	
+	private void actionWateringcan(Vector2[] selectedFields) {
+		foreach (Vector2 v in selectedFields) {
+			GameObject field = GameObject.Find(v.ToString());
+
+			if(field != null) {
+				field.GetComponentInChildren<PlotScript>().water += 25;
+			}
+		}
+	}
+	
+	private void endSelecting() {
+		
+		Vector2[] selectedFields = sel.getVectorsInside();
+
+		switch (GameObject.Find("Menu_Utilities").GetComponent<MenuScript>().getActiveUtility().ToString()) {
+			case "mower":
+			break;
+			case "spade":
+				actionSpade(selectedFields);
+			break;
+			case "wateringcan":
+				actionWateringcan(selectedFields);
+			break;
+			case "seedbag":
+			break;
+		}
+
 	
 		cursor.transform.localScale = new Vector2(1, 1);
 		sel = null;

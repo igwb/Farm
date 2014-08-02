@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SelectorScript : MonoBehaviour {
+public class SelectionRenderer : MonoBehaviour {
 
 
 	// Use this for initialization
